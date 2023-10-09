@@ -8,47 +8,55 @@ int main()
 
     char escolha;
     float preco;
-    float parcela;
+    int parcela;
     float resultado;
+    float desconto;
 
     // solicitando dados
 
-    printf(" V | À VISTA\n");
+    printf("Digite o valor do produto: ");
+    scanf("%f", &preco);
+    fflush(stdin);
+    system("cls || clear");
+
+    printf(" V | Ã€ VISTA\n");
     printf(" P |  PARCELADO\n");
 
     printf("Escolha a forma de pagamento desejada: ");
     scanf("%c", &escolha);
     system("cls || clear");
     fflush(stdin);
+
     // finalizando dados
-    preco = 100;
 
     switch (escolha)
     {
-    case 'v':
-        printf("PAGAMENTO :Á VISTA\n");
+    case 'V':
+        printf("PAGAMENTO :Ã€ VISTA\n");
         resultado = preco * 90 / 100;
+        desconto = preco * 0.1;
         printf("Valor : %f \n", resultado);
+        printf("Desconto : %f \n", desconto);
         break;
         system("cls || clear");
         fflush(stdin);
-        
-    case 'p':
+
+    case 'P':
         printf("escolha a quantidade de parcela : ");
-        scanf("%f", &parcela);
+        scanf("%d", &parcela);
         system("cls || clear");
-       
 
         if (parcela > 6 || parcela <= 0)
         {
-            printf("Pagamento não pode ser efetuado\n");
+            printf("Pagamento nÃ£o pode ser efetuado\n");
             break;
         }
         else if (parcela >= 1 && parcela <= 6)
             printf("PAGAMENTO : PARCELADO \n");
-       
+
         resultado = preco / parcela;
         printf("Valor : %f \n", resultado);
+        printf("Parcelas : %d \n", parcela);
         break;
         system("cls || clear");
 
