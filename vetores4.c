@@ -8,13 +8,13 @@ int main()
 {
     setlocale(LC_ALL, "portuguese");
      int i;
-     int numeros[5];
+     int numeros[6];
      int pares=0;
      int impares=0;
      
 
      printf("digite os elementos do vetor : \n");
-     for(i = 0; i < 5; i++)
+     for(i = 0; i < 6; i++)
      {
         printf("Nota %d : \n", i+1);
         scanf("%d", &numeros[i]);
@@ -32,7 +32,7 @@ int main()
     
      system ("cls || clear ");
     
-     for (i = 0; i < 5; i++)
+     for (i = 0; i < 6; i++)
      {
         printf("Nota %d : %d\n",i +1, numeros[i]);
      }
