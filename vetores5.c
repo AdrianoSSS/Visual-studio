@@ -17,10 +17,10 @@ int main()
      for(i = 0; i < 6; i++)
      {
         printf("Digite %d nome: \n", i+1);
-        scanf("%s", &idades[i]);
+        scanf("%s", &nomes[i]);
         
         printf("Digite %d idade : \n", i+1);
-        scanf("%d", &nomes[i]);
+        scanf("%d", &idades[i]);
       fflush(stdin);
      }
     
