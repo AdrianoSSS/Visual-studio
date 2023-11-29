@@ -6,53 +6,83 @@
 int main()
 {
     setlocale(LC_ALL, "portuguese");
-    struct ficha_aluno
+    struct ficha_trabalho
     {
         char nome[200];
-        int idade;
-        float notas[2];
-        float media;
-       
-    };
-    struct ficha_aluno aluno[3];
+        int dataadmissao;
+        int datanascimento;
+        int matricula;
+        char endereco[200];
+      };
+    struct ficha_trabalho funcionario [3];
+    struct ficha_trabalho  cliente  [3];
     int i=0;
-    int j = 0;
-    float soma =0;
-
+    int j=0;
+    
     for (i = 0; i < 3; i++)
     {
-        printf("digite o nome do aluno : \n");
-        scanf("%s", aluno[i].nome);
+    	  fflush(stdin);
+        printf("digite o nome do funcionario : \n");
+        scanf("%s", funcionario[i].nome);
 
-        printf("digite a idade do aluno : \n");
-        scanf("%d", &aluno[i].idade);
-        for (j = 0; j < 2; j++)
-        {
-            printf("digite a  %dÂ° nota do aluno : \n", j + 1);
-            scanf("%f", &aluno[i].notas[j]);   
-            soma += aluno[i].notas[j];
-        }
+        printf("digite a data de admissão do funcionario : \n");
+        scanf("%d", &funcionario[i].dataadmissao);
         
-        aluno[i].media = soma / j;
-        fflush(stdin);
-        system("cls || clear");
+         fflush(stdin);
+        
+        printf("digite a matricula do  funcionario : \n");
+        scanf("%d", &funcionario[i].matricula);
+        
+        printf("digite o endereço do  funcionario : \n");
+        scanf("%s", &funcionario[i].endereco);
+        
+         fflush(stdin);
+         system("cls || clear");
+      
+         printf("digite o nome do cliente : \n");
+        scanf("%s", cliente[i].nome);
+
+        printf("digite a data de nascimento do cliente : \n");
+        scanf("%d", &cliente[i].datanascimento);
+        
+         fflush(stdin);
+        
+        printf("digite  o endereço do cliente : \n");
+        scanf("%s", &cliente[i].endereco);
+         system("cls || clear");
+         fflush(stdin);
     }
 
     system("cls || clear");
 
-    printf("\nExibindo os dados do aluno ...\n\n");
+    printf("\nExibindo os dados do ficha_funcionario ...\n\n");
     for (i = 0; i < 3; i++)
     {
-    	printf("%dÂ° Aluno \n", i+1);
-        printf("nome do aluno : %s \n", aluno[i].nome);
-        printf("idade do aluno : %d \n", aluno[i].idade);
-        for (j = 0; j < 2; j++)
-        {
-            printf("%dÂ° nota : %f \n",j+1,aluno[i].notas[j]);
-        }
-        printf("media do aluno : %f \n", aluno[i].media);
-          printf("\n\n");
+    	   fflush(stdin);
+	  printf("%d° funcionario \n",i+1);
+      printf("nome: %s \n",funcionario[i].nome);
+         fflush(stdin);
+      printf("data de admissão : %s \n", funcionario[i].dataadmissao);
+      printf("matricula : %s \n", funcionario[i].matricula);
+         fflush(stdin);
+      printf("endereço : %s \n", funcionario[i].endereco);
+      
+	     fflush(stdin);
+	  printf("\n\n");
+      
+      printf("%d° cliente \n",i+1);
+      printf("nome: %s\n",cliente[i].nome);
+         fflush(stdin);
+      printf("data de nascimento: %s\n",cliente[i].datanascimento);
+      printf("endereço: %s\n",cliente[i].endereco);    
+	     fflush(stdin); 
+      
+      printf("\n\n");
     }
 
     return 0;
 }
+
+
+    
+		
