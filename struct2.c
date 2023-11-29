@@ -10,13 +10,14 @@ int main()
     {
         char nome[200];
         int idade;
-        int soma;
         float notas[2];
-        float media[2];
+        float media;
+       
     };
     struct ficha_aluno aluno[3];
-    int i;
+    int i=0;
     int j = 0;
+    float soma =0;
 
     for (i = 0; i < 3; i++)
     {
@@ -27,13 +28,13 @@ int main()
         scanf("%d", &aluno[i].idade);
         for (j = 0; j < 2; j++)
         {
-            printf("digite a  %d� nota do aluno : \n", j + 1);
-            scanf("%f", &aluno[i].notas[j]);
-       
+            printf("digite a  %d° nota do aluno : \n", j + 1);
+            scanf("%f", &aluno[i].notas[j]);   
+            soma += aluno[i].notas[j];
         }
+        
+        aluno[i].media = soma / j;
         fflush(stdin);
-        soma += notas[j];
-        media[j] = soma / 2;
         system("cls || clear");
     }
 
@@ -42,13 +43,15 @@ int main()
     printf("\nExibindo os dados do aluno ...\n\n");
     for (i = 0; i < 3; i++)
     {
+    	printf("%d° Aluno \n", i+1);
         printf("nome do aluno : %s \n", aluno[i].nome);
         printf("idade do aluno : %d \n", aluno[i].idade);
         for (j = 0; j < 2; j++)
         {
-            printf("notas do aluno : %f \n", aluno[i].notas[j]);
-            printf("media do aluno : %f \n", aluno[i].media[j]);
+            printf("%d° nota : %f \n",j+1,aluno[i].notas[j]);
         }
+        printf("media do aluno : %f \n", aluno[i].media);
+          printf("\n\n");
     }
 
     return 0;
