@@ -4,6 +4,8 @@
 #include <string.h>
 #include <ctype.h>
 
+//#define TAM 6
+
 void cabecalho()
 {
     printf("\n====================================\n");
